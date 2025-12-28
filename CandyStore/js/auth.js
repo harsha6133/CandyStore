@@ -29,9 +29,15 @@ function register() {
 
 
 function login() {
-  const users = JSON.parse(localStorage.getItem("users"));
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!username || !password) {
+    alert("Please enter username and password");
+    return;
+  }
 
   const user = users.find(
     u => u.username === username && u.password === password
@@ -45,14 +51,16 @@ function login() {
   localStorage.setItem("currentUser", JSON.stringify(user));
 
   if (user.role === "admin") {
-    window.location.href = "admin.html";
+    window.location.replace("admin.html");
   } else {
-    window.location.href = "index.html";
+    window.location.replace("index.html");
   }
 }
+
 function logout() {
   localStorage.removeItem("currentUser");
   window.location.href = "login.html";
 }
+
 
 
