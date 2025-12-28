@@ -73,7 +73,7 @@ function saveCandies() {
   localStorage.setItem("candies", JSON.stringify(candies));
 }
 
-/
+
 function renderCandies() {
   adminCandiesDiv.innerHTML = "";
 
@@ -116,3 +116,4 @@ document
 
 
 renderCandies();
+
