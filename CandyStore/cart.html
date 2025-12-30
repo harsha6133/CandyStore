@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>🍭 Candy Store</h1>
+  <a href="index.html">🏠 Home</a>
+  <button id="logoutBtn">Logout</button>
+</header>
+
+<div class="cart-container">
+  <div class="cart-card">
+
+    <h2>Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+      <h3 id="total"></h3>
+      <button onclick="purchase()">Purchase</button>
+    </div>
+
+  </div>
+</div>
+<script src="js/auth-guard.js"></script>
+
+<script src="js/cart.js"></script>
+</body>
+</html>
